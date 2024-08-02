@@ -15,7 +15,5 @@ try:
         (By.CSS_SELECTOR,".bg-success"))).text
     sleep(2)
     print(text_from_content)
-except Exception as ex:
-    print(ex)
 finally:
     driver.quit()

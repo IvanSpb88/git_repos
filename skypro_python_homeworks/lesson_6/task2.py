@@ -13,9 +13,6 @@ try:
     sleep(2)
     new_button_name = driver.find_element("id", "updatingButton").text
     sleep(2)
-    print(new_button_name)
-
-except Exception as ex:
-    print(ex)    
+    print(new_button_name)   
 finally:
     driver.quit()

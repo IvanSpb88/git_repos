@@ -14,9 +14,6 @@ try:
     sleep(2)
     get_attribute = driver.find_element(By.ID, "award").get_attribute("src")
     print(get_attribute)
-
-except Exception as ex:
-    print(ex)
 finally:
     driver.quit()
 
