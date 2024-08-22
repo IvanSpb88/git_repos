@@ -8,7 +8,7 @@ class MainPage:
         self.browser = browser
         self.url = url
     
-    def  open(self):
+    def open(self):
         self.browser.get(self.url)
     
     def fill_fields(self, v_dict: dict):
@@ -17,7 +17,7 @@ class MainPage:
             self.browser.find_element(By.CSS_SELECTOR, selector).send_keys(value)
 
     def click_submit(self):
-         WebDriverWait(self.browser, 40, 0.1).until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[type="submit"]'))).click()
+        WebDriverWait(self.browser, 40, 0.1).until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[type="submit"]'))).click()
         
     def find_element_property(self, locator):
         background_color = self.browser.find_element(By.ID, locator).value_of_css_property("background-color")
