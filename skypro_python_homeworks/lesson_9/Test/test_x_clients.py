@@ -21,7 +21,7 @@ def test_get_list_of_employers():
 def test_add_new_employer():
     db.create_company('Evgen adding new employer', 'employer')
     max_id = db.last_company_id()
-    api.create_employer(company, employee)
+    db.create_employer(max_id, "Evgen", "Voronov", 8002000600)
     response = (api.get_list(max_id))[0]
     employer_id = response["id"]
     assert response["companyId"] == max_id
@@ -48,7 +48,7 @@ def test_update_user_info():
     max_id = db.last_company_id()
     db.create_employer(max_id, "Evgen", "Voronov", 8002000600)
     employer_id = db.get_employer_id(max_id)
-    api.patch_employee(new_employer_id,employee_edit)
+    db.update_employer_info("King", employer_id)
     get_api_info = (api.get_info(employer_id)).json()
     assert get_api_info["firstName"] == "King"
     assert get_api_info["lastName"] == "Voronov"
