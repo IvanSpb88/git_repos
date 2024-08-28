@@ -18,7 +18,7 @@ class Employer:
     
     @allure.step("Добавляем сотрудника в компанию")
     def add_new(self, token: str, body: json):
-        headers = {'x=client-token': token}
+        headers = {'x-client-token': token}
         response = requests = requests.post(
             self.url + '/employee', headers=headers, json=body)
         return response.json()
