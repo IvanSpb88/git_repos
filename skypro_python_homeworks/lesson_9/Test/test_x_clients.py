@@ -22,6 +22,7 @@ def test_add_new_employer():
     db.create_company('Evgen adding new employer', 'employer')
     max_id = db.last_company_id()
     db.create_employer(max_id, "Evgen", "Voronov", 8002000600)
+    
     response = (api.get_list(max_id))[0]
     employer_id = response["id"]
     assert response["companyId"] == max_id

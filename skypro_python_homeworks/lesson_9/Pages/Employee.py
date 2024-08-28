@@ -15,7 +15,7 @@ class Employer:
         return response.json()
     
     def add_new(self, token: str, body: json):
-        headers = {'x=client-token': token}
+        headers = {'x-client-token': token}
         response = requests = requests.post(
             self.url + '/employee', headers=headers, json=body)
         return response.json()
